@@ -1,12 +1,22 @@
 body {
+    margin: 20px 0 0;
+    padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: #28292b;
+    color: #d6d7d8;
+}
+
+.gallery {
+    display: flex;
 }
 
 #carousel {
     width: 400px;
     height: 300px;
-    border: 3px solid blue;
+    border: 3px solid #d6d7d8;
     overflow: hidden;
 }
 
@@ -29,3 +39,26 @@ li {
     float: left;
 }
 
+.arrow {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+    font-size: 30px;
+}
+
+div[class^="dot-"] {
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 100px;
+  width: 10px;
+  height: 10px;
+  margin: 20px;
+  display: inline-block;
+}
+
+div[class^="dot-"]:hover {
+  background-color: darkgreen;
+  transform: scale(2);
+  border-color: darkgreen;
+}
