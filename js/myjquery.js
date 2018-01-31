@@ -32,6 +32,7 @@ $(function(){
     
     arrowRight.on("click", function() {
         
+        clearInterval(movingSlides);        
         carouselList.stop();        
 
         carouselList.animate({'marginLeft':-400}, moveFirstSlide);
@@ -39,6 +40,7 @@ $(function(){
     
     arrowLeft.on("click", function() {
         
+        clearInterval(movingSlides);        
         carouselList.stop();
         
         carouselList.animate({'marginLeft':0}, moveLastSlide);
