@@ -39,10 +39,9 @@ $(function(){
     
     arrowLeft.on("click", function() {
         
-        carouselList.stop(false, true);
+        carouselList.stop();
         
-        moveLastSlide();
-        carouselList.animate({'marginLeft':0});
+        carouselList.animate({'marginLeft':0}, moveLastSlide);
     });
     
     var buttonslide = $("div[class^='dot-'");
