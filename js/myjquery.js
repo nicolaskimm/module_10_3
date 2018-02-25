@@ -4,7 +4,6 @@ $(function(){
     setInterval(movingSlides, 5000);
     
     function movingSlides() {
-        
         carouselList.animate({'marginLeft': -400}, 5000, moveFirstSlide);
     };
     
@@ -14,6 +13,7 @@ $(function(){
         var findLastSlide = carouselList.find("li:last");
 
         findLastSlide.after(findFirstSlide);
+        checkDot();
         carouselList.css({'marginLeft': 0});
         
     };
@@ -23,6 +23,7 @@ $(function(){
         var findLastSlide = carouselList.find("li:last");
 
         findFirstSlide.before(findLastSlide);
+        checkDot();
         carouselList.css({'marginLeft': -400});
     };
         
@@ -57,8 +58,41 @@ $(function(){
         
         var findFirstSlide = carouselList.find("li:first");
         findFirstSlide.before(clickPhoto);
+        checkDot();
         carouselList.css({'marginLeft': 0});
     });
+    
+    function checkDot() {
+        var first = $("li:first");
+        switch(first[0]) {
+
+            case photos[0]:
+                $("div[class^='dot-']").css("background-color", "white");
+                $(".dot-1").css("background-color", "green");
+                break;
+
+            case photos[1]:
+                $("div[class^='dot-']").css("background-color", "white");
+                $(".dot-2").css("background-color", "green");
+                break;
+
+            case photos[2]:
+                $("div[class^='dot-']").css("background-color", "white");
+                $(".dot-3").css("background-color", "green");
+                break;
+
+            case photos[3]:
+                $("div[class^='dot-']").css("background-color", "white");
+                $(".dot-4").css("background-color", "green");
+                break;
+
+            case photos[4]:
+                $("div[class^='dot-']").css("background-color", "white");
+                $(".dot-5").css("background-color", "green");
+                break;
+        }
+    }
+    checkDot();
 });
 
      
