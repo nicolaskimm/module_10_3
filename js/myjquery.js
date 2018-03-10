@@ -8,7 +8,6 @@ $(function(){
     };
     
     function moveFirstSlide () {
-
         var findFirstSlide = carouselList.find("li:first");
         var findLastSlide = carouselList.find("li:last");
 
@@ -32,19 +31,16 @@ $(function(){
     var arrowLeft = $('.fa-arrow-left');
     
     arrowRight.on("click", function() {
-        
         clearInterval(movingSlides);        
-        carouselList.stop();        
 
         carouselList.animate({'marginLeft':-400}, moveFirstSlide);
     });
     
     arrowLeft.on("click", function() {
-        
         clearInterval(movingSlides);        
-        carouselList.stop();
         
-        carouselList.animate({'marginLeft':0}, moveLastSlide);
+        moveLastSlide();
+        carouselList.animate({'marginLeft':0});
     });
     
     var buttonslide = $("div[class^='dot-'");
